@@ -55,7 +55,7 @@ public class StudentController {
 	public String updateStudent(@RequestParam("studentId") Long studentId, Model model){
 		
 		model.addAttribute("student", studentService.getStudentById(studentId));
-		
+		model.addAttribute("courses", courseService.getCourses(null));
 		return "createStudent";
 	}
 	
