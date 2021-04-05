@@ -16,9 +16,9 @@ public class StudentService {
 	}
 	
 	public List<Student> getStudents(String keyword){
-//		if(keyword != null) {
-//			return studentRepository.findAll(keyword);
-//		}
+		if(keyword != null) {
+			return studentRepository.findAll(keyword);
+		}
 		return (List<Student>) studentRepository.findAll();
 	}
 

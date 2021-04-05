@@ -21,7 +21,8 @@ public class Student {
 	@Column(name = "first_name")
 	private String firstName;
 	
-	@ManyToMany(mappedBy = "students")
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinTable(name = "course_student", joinColumns = @JoinColumn(name = "id"), inverseJoinColumns = @JoinColumn(name = "code"))
 	private Set<Course> courses;
 
 	public Student(){}

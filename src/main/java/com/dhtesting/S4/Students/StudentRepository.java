@@ -10,7 +10,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Long>{
 	
-//	@Query("SELECT s FROM Student s WHERE CONCAT(s.code, ' ', s.title, ' ', s.description) LIKE %?1%")
-//	public List<Student> findAll(String keyword);
+	@Query(value = "SELECT s.id, s.last_name, s.first_name FROM Student s WHERE CONCAT(s.id, ' ', s.last_name, ' ', s.first_name) LIKE %?1%", 
+			nativeQuery = true)
+	public List<Student> findAll(String keyword);
 	
 }
