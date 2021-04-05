@@ -6,10 +6,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Students from Course</title>
+<link href="/webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-	<table border="1">
+	<h1> ${course.title} </h1>
+	
+	<table class="table table-striped">
 		<thead>
 			<tr>
 				<th>ID</th>
@@ -31,7 +34,7 @@
 	
 	</table>
 		
-	<a href="/course/">Back</a>
+	<a href="/course/" class="btn btn-danger" role="button">Back</a>
 	
 </body>
 </html>

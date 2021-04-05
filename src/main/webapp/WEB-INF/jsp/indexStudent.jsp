@@ -2,22 +2,28 @@
     pageEncoding="ISO-8859-1"%>
     
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Students</title>
+<link href="/webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 	<h1>Students</h1>
 	<div>
-		<form action="/student/">  
-			Keyword : <input type="text" name="keyword"/>
-			<input type="submit" value="Search"> 
+		<form action="/student/">
+			<div class="input-group">
+				<input type="text" class="form-control" name="keyword" placeholder="Search"/>
+				<div class="input-group-btn">
+			    	<button class="btn btn-default" type="submit" value="Search"><i class="glyphicon glyphicon-search"></i></button>
+				</div>
+			</div>
 		</form>
 	</div>
 
-	<table border="1">
+	<table class="table table-striped">
 		<thead>
 			<tr>
 				<th>ID</th>
@@ -48,24 +54,22 @@
 		            <td>${student.lastName}</td>
 		            
 		            <td>
-						<a href="${coursesLink}">Courses</a>
+						<a href="${coursesLink}" class="btn btn-info" role="button">Courses</a>
 					</td>
 		            
 		            <td>
 			            
-			            <a href="${updateLink}">Edit</a>
+			            <a href="${updateLink}" class="btn btn-primary" role="button">Edit</a>
 			            
-			            <a href="${deleteLink}">Delete</a>
+			            <a href="${deleteLink}" class="btn btn-danger" role="button">Delete</a>
 		            </td>
 				</tr>
 			</c:forEach>
 		</tbody>
 		
-	
-	
 	</table>
 		
-	<a href="/student/showForm">Create</a>
-	
+	<a href="/student/showForm" class="btn btn-success" role="button">Create</a>
+	<a href="/" class="btn btn-danger" role="button">Go back</a>
 </body>
 </html>

@@ -33,7 +33,7 @@ public class StudentController {
 		this.courseService = courseService;
 	}
 	
-	@RequestMapping("/")
+	@RequestMapping({"/", ""})
 	public String index(@RequestParam(value = "keyword", required = false) String keyword, Model model) {
 		
 		List<Student> students = studentService.getStudents(keyword);
